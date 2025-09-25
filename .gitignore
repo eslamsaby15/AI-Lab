@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+*.pyo
+*.pyd
+*.pkl
+
+# Virtual environment
+venv/
+.env
+.env.*
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs and temp
+*.log
+outputs/
+temp/
+
+# Models and large files
+models/
+
+# Streamlit cache
+.streamlit/
