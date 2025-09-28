@@ -7,7 +7,7 @@ __pycache__/
 *.pyo
 *.pyd
 *.pkl
-
+p.ipynb
 # Virtual environment
 venv/
 .env
