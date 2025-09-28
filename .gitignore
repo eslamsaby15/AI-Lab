@@ -12,7 +12,10 @@ p.ipynb
 venv/
 .env
 .env.*
+*src/assets/Data
 app2.py
+**/Data/
+
 # IDE and editor settings
 .vscode/
 .idea/
