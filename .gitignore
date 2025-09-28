@@ -12,7 +12,7 @@ p.ipynb
 venv/
 .env
 .env.*
-
+app2.py
 # IDE and editor settings
 .vscode/
 .idea/
