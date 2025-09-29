@@ -15,7 +15,7 @@ def summarizer_page():
         st.session_state.sum_summary = None
 
     if "generation_provider" not in st.session_state:
-        st.session_state["generation_provider"] = "GEMINIAI"
+        st.session_state["generation_provider"] = "Gemini"
 
     if "embedding_provider" not in st.session_state:
         st.session_state["embedding_provider"] = "Cohere"

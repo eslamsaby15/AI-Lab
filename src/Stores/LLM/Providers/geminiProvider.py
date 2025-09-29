@@ -3,6 +3,7 @@ from ..LLMEnums import GeminiEnums
 import google.generativeai as genai
 from typing import List, Union
 import logging
+import re
 
 
 class GenAIProvider(LLMInterFace):
@@ -89,3 +90,30 @@ class GenAIProvider(LLMInterFace):
             return None
 
         return response.text
+    
+    def Diarization_Chunks(self, prompt : str ,temperature :  float = 0.2) :
+        if not self.gen_model_id:
+            self.logger.error("gen model for GEMINI was not set")
+            return None
+        model=  genai.GenerativeModel(self.gen_model_id)
+
+        temperature = temperature if temperature else self.default_generation_temperature
+
+        model = genai.GenerativeModel(self.gen_model_id)
+
+        response = model.generate_content(
+            prompt,
+            generation_config={
+                "temperature": temperature,
+            }
+        )
+
+        if not response or not response.text:
+            self.logger.error('Error while generating text with GenAI')
+            return None
+
+        return response.text
+
+
+
+        
