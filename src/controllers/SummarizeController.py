@@ -1,5 +1,4 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from ..helpers.config import APP_Setting
 from transformers import pipeline
 from .BaseController import BaseController
 from langchain.prompts import PromptTemplate
@@ -91,7 +90,7 @@ class Summarizer(BaseController):
                 max_output_tokens= max_length ,
                 temperature= .3
             )
-            print(summary)
+            
             summaries.append(
                  summary.strip() )
             

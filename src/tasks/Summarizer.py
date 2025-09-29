@@ -27,6 +27,7 @@ class SummarizerTask:
 
             else : 
                 print(provider_name)
+                
         self.summarizer= Summarizer(lang= self.lang , 
                                     mode= self.mode , 
                                     provider= self.provider)

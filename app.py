@@ -1,5 +1,5 @@
 import streamlit as st
-from src.pages import setup_page ,summarizer_page
+from src.pages import setup_page ,summarizer_page ,Diarizationr_page
 
 
 # =====================
@@ -23,8 +23,7 @@ if __name__ =="__main__" :
         st.write("Here goes qa_ui.render()")
 
     elif st.session_state["features"] == "📝 Summarize":
-        st.subheader("📝 Summarize Page")
-       
+        st.subheader("📝 Summarize")
         summarizer_page()
 
     elif st.session_state["features"] == "🎧 Podcast Generator":
@@ -32,12 +31,9 @@ if __name__ =="__main__" :
         st.write("Here goes podcast_generator_ui.render()")
 
     elif st.session_state["features"] == "🔊 Speaker Diarization":
-        st.subheader("🔊 Speaker Diarization Page")
-        st.write("Here goes diarization_ui.render()")
-    
-    
-
-    
+        Diarizationr_page()
+        
+      
     elif st.session_state["features"] == "🌍 Translation":
         st.subheader("🌍 Translation Page")
         st.write("Here goes translation_ui.render()")

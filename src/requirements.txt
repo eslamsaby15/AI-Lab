@@ -1,0 +1,15 @@
+cohere
+streamlit
+yt-dlp
+pydub
+ffmpeg-python
+transformers
+torch
+gtts
+pyannote.audio
+torchvision
+torchaudio
+langdetect
+
+
+
