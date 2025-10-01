@@ -91,7 +91,7 @@ class GenAIProvider(LLMInterFace):
 
         return response.text
     
-    def Diarization_Chunks(self, prompt : str ,temperature :  float = 0.2) :
+    def generate_Chunks(self, prompt : str ,temperature :  float = 0.2) :
         if not self.gen_model_id:
             self.logger.error("gen model for GEMINI was not set")
             return None

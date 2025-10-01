@@ -1,16 +1,20 @@
 from ..Stores.LLM import LLMProviderFactory, LLMEnums, GenAIProvider
 from ..helpers import APP_Setting
-from ..controllers import Diarization
+from ..controllers import VideoSriptGenController
 
 
-class DiarizationTask:
-    def __init__(self, lang: str = "en", provider_name: LLMEnums = None, chunk_size: int = 3000):
+class VideoSriptGenTask:
+    def __init__(self, lang: str = "en", provider_name: LLMEnums = None, 
+                 video_topic : str = None  , style : str ='Simple & Clear', 
+                  duration: int = 3):
 
         self.lang = lang if lang != 'auto' else 'en'
-        self.chunk_size = chunk_size
+        self.duration = duration
+        self.style = style
+        self.topic = video_topic
         self.config= APP_Setting()
-
         self.provider : GenAIProvider =None
+        self.duration = duration
          
         factory = LLMProviderFactory(self.config) 
 
@@ -28,13 +32,17 @@ class DiarizationTask:
                     self.provider.set_generation_model(model_id = self.config.GENERATION_MODEL_ID_COHERE_LIGHT)
         else : 
             print(provider_name)
-                
 
-        self.diarization = Diarization(
-            lang=self.lang,
-            provider=self.provider,
-            chunk_size=self.chunk_size
+        self.VideoGen = VideoSriptGenController(
+            lang=self.lang , 
+            video_topic=self.topic , 
+            style=self.style , 
+            provider= self.provider , 
+            duration= self.duration
         )
 
-    def run(self, transcript: str):
-        return self.diarization.run_diarization(transcript)
+    def run(self, words_per_minute : int = 200 ):
+        return self.VideoGen.GenerateScript( words_per_minute )
+
+    def Convert(self , script_text : str  , lang ='en') :
+        return self.VideoGen.video_to_audio(script_text=script_text) 

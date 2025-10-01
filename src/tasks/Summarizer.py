@@ -24,6 +24,8 @@ class SummarizerTask:
                 self.provider.set_generation_model(model_id = self.config.GENERATION_MODEL_ID_GEMINI)
             elif provider_name == LLMEnums.OPENAI.value:
                 self.provider.set_generation_model(model_id = self.config.GENERATION_MODEL_ID_OPENAI)
+            elif provider_name == LLMEnums.COHERE.value:
+                    self.provider.set_generation_model(model_id = self.config.GENERATION_MODEL_ID_COHERE_LIGHT)
 
             else : 
                 print(provider_name)

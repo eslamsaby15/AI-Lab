@@ -10,7 +10,6 @@ class Diarization(BaseController):
     def __init__(self, lang: str, provider: GenAIProvider, chunk_size: int = 6000):
         super().__init__()
         self.lang = lang
-        print(lang)
         self.provider = provider
         self.chunk_size = chunk_size
 
@@ -30,7 +29,6 @@ class Diarization(BaseController):
             ("user", "{text}")
         ])
 
-
         self.prompt_template = ChatPromptTemplate.from_messages([
             ("system", system_text),
             ("user", "{text}")
@@ -42,7 +40,7 @@ class Diarization(BaseController):
 
         for i, chunk in enumerate(chunks):
             prompt = self.prompt_template.format(text=chunk)
-            output = self.provider.Diarization_Chunks(prompt)
+            output = self.provider.generate_Chunks(prompt)
             cleaned_text = self._clean_output(output)
 
             try:

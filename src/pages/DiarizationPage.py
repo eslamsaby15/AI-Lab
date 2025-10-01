@@ -93,12 +93,15 @@ def Diarizationr_page():
         segments_data = [{"speaker": s.speaker, "text": s.text} for s in segments]
         diarized_json = json.dumps(segments_data, ensure_ascii=False, indent=2)
         
-        st.download_button(
-            "💾 Download JSON",
-            data=diarized_json,
-            file_name="diarization.json",
-            mime="application/json"
-        )
+        with st.sidebar:
+            st.markdown("## 📂 Export Options")
+            st.download_button(
+                "💾 Download JSON",
+                data=diarized_json,
+                file_name="diarization.json",
+                mime="application/json"
+            )
+
         
     elif st.session_state.diarization_result:
         st.info("No segments found in the diarization result.")

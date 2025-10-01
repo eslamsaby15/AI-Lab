@@ -1,5 +1,6 @@
 import streamlit as st
-from src.pages import setup_page ,summarizer_page ,Diarizationr_page
+from src.pages import (setup_page ,summarizer_page ,Diarizationr_page ,VideoScriptGenerationPage , 
+                       PodcastSriptPage)
 
 
 # =====================
@@ -13,10 +14,8 @@ if __name__ =="__main__" :
     if "features" not in st.session_state:
         st.session_state["features"] = "🏡 Home"
         
-
     elif st.session_state["features"] == "📽️ Video Script Generator":
-        st.subheader("📽️ Video Script Generator Page")
-        st.write("Here goes video_script_generator_ui.render()")
+        VideoScriptGenerationPage()
   
     elif st.session_state["features"] == "❓ Q&A":
         st.subheader("❓ Q&A Page")
@@ -27,8 +26,7 @@ if __name__ =="__main__" :
         summarizer_page()
 
     elif st.session_state["features"] == "🎧 Podcast Generator":
-        st.subheader("🎧 Podcast Generator Page")
-        st.write("Here goes podcast_generator_ui.render()")
+        PodcastSriptPage()
 
     elif st.session_state["features"] == "🔊 Speaker Diarization":
         Diarizationr_page()

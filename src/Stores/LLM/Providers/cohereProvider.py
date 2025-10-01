@@ -96,4 +96,24 @@ class CohereProvider(LLMInterFace) :
         return response.text
         
 
-    
+    def generate_Chunks(self, prompt : str, temperature = 0.3): 
+        if not self.client : 
+            self.logger("CoHere client was not set")
+            return None
+        if not self.gen_model_id :
+            self.logger.error("Generation model for CoHere was not set")
+            return None
+        
+        temperature = temperature if temperature else self.default_generation_temperature
+
+        response = self.client.chat(
+            model = self.gen_model_id,
+            message = prompt,
+            temperature = temperature,
+        )
+
+        if not response or not response.text:
+            self.logger.error("Error while generating text with CoHere")
+            return None
+        
+        return response.text  
