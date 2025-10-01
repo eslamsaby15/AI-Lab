@@ -17,7 +17,6 @@ class Youtube(BaseController):
     def __init__(self):
         super().__init__()
         self.project_controller = ProjectController()
-        self.transcribe_model = whisper.load_model('small')
 
     def Download(self, url: str):
         project_key = self.generate_random_string()

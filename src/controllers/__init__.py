@@ -4,3 +4,4 @@ from .SummarizeController import Summarizer
 from .DiarizationController import Diarization
 from .VideoScrpitController import VideoSriptGenController
 from .podcastGenController import PodcastGenController
+from .TranslationController import TransaltionController

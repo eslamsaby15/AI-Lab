@@ -82,7 +82,7 @@ class CohereProvider(LLMInterFace) :
         temperature = temperature if temperature else self.default_generation_temperature
 
         response = self.client.chat(
-            model = self.generation_model_id,
+            model = self.gen_model_id,
             chat_history = chat_history,
             message = self.process_text(prompt),
             temperature = temperature,

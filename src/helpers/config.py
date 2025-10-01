@@ -9,6 +9,7 @@ class Setting(BaseSettings) :
     APP_NAME: str
     APP_VERSION: str
     EN_MODEL: str
+    EN_AR_MODEL : str 
 
     GENERATION_BACKEND_OPENAI: str
     GENERATION_BACKEND_GEMINI: str

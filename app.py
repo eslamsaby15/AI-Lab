@@ -1,6 +1,6 @@
 import streamlit as st
 from src.pages import (setup_page ,summarizer_page ,Diarizationr_page ,VideoScriptGenerationPage , 
-                       PodcastSriptPage)
+                       PodcastSriptPage ,Translation_page)
 
 
 # =====================
@@ -33,8 +33,7 @@ if __name__ =="__main__" :
         
       
     elif st.session_state["features"] == "🌍 Translation":
-        st.subheader("🌍 Translation Page")
-        st.write("Here goes translation_ui.render()")
+        Translation_page()
 
     elif st.session_state["features"] == "📊 Sentiment Analysis":
         st.subheader("📊 Sentiment Analysis Page")
