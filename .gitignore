@@ -32,7 +32,7 @@ outputs/
 temp/
 
 # Models and large files
-models/
+
 
 # Streamlit cache
 .streamlit/

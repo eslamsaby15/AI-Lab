@@ -65,13 +65,13 @@ def setup_page():
         index=["Cohere", "OpenAI", "Gemini"].index(st.session_state["embedding_provider"])
     )
 
-    # Sidebar footer
     with st.sidebar:
         st.markdown("---")
-        st.markdown("## 👨‍💻 Built by Eslam Sabry")
-        st.markdown("🔗 [LinkedIn](https://www.linkedin.com/in/eslamsabryai)")
-        st.markdown("🔗 [Kaggle](https://www.kaggle.com/eslamsabryelsisi)")
+        st.markdown("## 👨‍💻 Built by :")
+        st.markdown("**Eslam Sabry** \n\n _ML Engineer_")
+        st.markdown("🔗 [LinkedIn](https://www.linkedin.com/in/eslamsabryai) 🔗 [Kaggle](https://www.kaggle.com/eslamsabryelsisi)")
         st.markdown("---")
+
 
     # Main page content
     if st.session_state["features"] == "🏡 Home":

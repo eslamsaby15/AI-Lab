@@ -27,7 +27,7 @@ class OpenAiProvider(LLMInterFace) :
         
         self.client= OpenAI(
             api_key=self.api_key ,
-            api_url = self.api_url
+            base_url = self.api_url
         )
 
     def  set_generation_model(self, model_id):
@@ -93,3 +93,30 @@ class OpenAiProvider(LLMInterFace) :
 
     def process_text(self, text : str ):
         return text[:self.default_input_max_characters].strip()
+
+
+    def generate_Chunks(self, prompt : str,  temperature = 0.3):
+        
+        if not self.client :
+            self.logger.error("OpenAI client was not set")
+            return None
+        
+        if not self.gen_model_id:
+            self.logger.error('Generation model for OpenAI was not set')
+
+        msg = self.construct_prompt(prompt=prompt , 
+                                                  role=self.OpenEnums.SYSTEM.value)
+
+        temperature =temperature if temperature else self.default_generation_temperature 
+
+        response = self.client.chat.completions.create(
+            model= self.gen_model_id,
+            messages= msg , 
+            temperature=temperature
+        )
+
+        if response is None or not response.choices or len(response.choices) ==0 or not response.choices[0].message:
+            self.logger.error("Error while generating text with OpenAI")
+            return None
+        
+        return response.choices[0].message['content']

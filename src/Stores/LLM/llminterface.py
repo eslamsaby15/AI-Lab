@@ -21,3 +21,8 @@ class LLMInterFace(ABC):
     @abstractmethod
     def construct_prompt(Self,prompt :str , role :str):
         pass
+
+    @abstractmethod
+    def generate_text(self, prompt : str, temperature :float ) :
+        pass
+    

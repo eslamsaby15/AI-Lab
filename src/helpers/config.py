@@ -9,6 +9,7 @@ class Setting(BaseSettings) :
     APP_NAME: str
     APP_VERSION: str
     EN_MODEL: str
+    EN_AR_MODEL : str 
 
     GENERATION_BACKEND_OPENAI: str
     GENERATION_BACKEND_GEMINI: str
@@ -24,10 +25,11 @@ class Setting(BaseSettings) :
 
     GENERATION_MODEL_ID_OPENAI: str = None
     GENERATION_MODEL_ID_GEMINI: str = None
+    GENERATION_MODEL_ID_COHERE_LIGHT : str = None
 
     EMBEDDING_MODEL_ID: str = None
     EMBEDDING_MODEL_ID_GEMINI: str = None
-
+    EMBEDDING_MODEL_ID_COHERE_MULTILINGUAL  : str = None
     
 
     OPENAI_API_URL: str = None
