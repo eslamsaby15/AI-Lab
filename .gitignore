@@ -11,7 +11,7 @@ p.ipynb
 # Virtual environment
 venv/
 .env
-.env.*
+
 *src/assets/Data
 app2.py
 **/Data/

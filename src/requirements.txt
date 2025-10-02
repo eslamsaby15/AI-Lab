@@ -10,6 +10,15 @@ pyannote.audio
 torchvision
 torchaudio
 langdetect
-
+langchain
+langgraph
+openai
+google-generativeai
+cohere
+python-dotenv
+pydantic-settings
+aiofiles
+langchain-community
+langchain-core
 
 
