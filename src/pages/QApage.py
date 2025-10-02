@@ -7,7 +7,7 @@ from ..tasks import QATask
 def QA_Page(): 
     youtube_link = None 
     file_uploaded = None
-    st.subheader("❓ Q&A ")
+    st.subheader("❓ Interactive Voice Quiz ")
 
     if "sum_transcript" not in st.session_state:
         st.session_state.sum_transcript = None

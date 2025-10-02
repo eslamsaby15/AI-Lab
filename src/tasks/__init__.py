@@ -4,3 +4,6 @@ from .VideoGenTask import VideoSriptGenTask
 from .PodcastGenTask import PoadcastGenTask
 from .Translationtask import TranslationTask
 from .QAtask import QATask
+from .sentimentanalysisTask import SentimentAnalysisTask
+from .TopicTagging import TopicTaggingTask
+from .MultiQuestionGenTask import MiniQuizTask

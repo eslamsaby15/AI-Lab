@@ -1,6 +1,6 @@
 import streamlit as st
 from src.pages import (setup_page ,summarizer_page ,Diarizationr_page ,VideoScriptGenerationPage , 
-                       PodcastSriptPage ,Translation_page ,QA_Page)
+                       PodcastSriptPage ,Translation_page ,QA_Page , SentimentAnalysis_page , TopicTagging_page , MiniQuiz_page)
 
 
 # =====================
@@ -15,8 +15,11 @@ if __name__ =="__main__" :
         
     elif st.session_state["features"] == "📽️ Video Script Generator":
         VideoScriptGenerationPage()
-  
-    elif st.session_state["features"] == "❓ Q&A":
+
+    elif st.session_state["features"] == "🧩 Multi Quiz":
+        MiniQuiz_page()
+
+    elif st.session_state["features"] == "❓ Interactive Voice Quiz":
         QA_Page()
         
     elif st.session_state["features"] == "📝 Summarize":
@@ -32,5 +35,10 @@ if __name__ =="__main__" :
         Translation_page()
 
     elif st.session_state["features"] == "📊 Sentiment Analysis":
-        st.subheader("📊 Sentiment Analysis Page")
-        st.write("Here goes sentiment_ui.render()")
+        SentimentAnalysis_page()
+
+    elif st.session_state["features"] == "🏷️ Topic Tagging":
+        TopicTagging_page()
+
+
+        

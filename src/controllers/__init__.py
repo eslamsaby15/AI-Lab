@@ -6,3 +6,6 @@ from .VideoScrpitController import VideoSriptGenController
 from .podcastGenController import PodcastGenController
 from .TranslationController import TransaltionController
 from .QaController import QAController
+from .sentimentanalysisController import SentimentAnalysisController
+from .TopicTaggingcontroller import TopicTaggingController
+from .GenQuestionController import MiniQuizController
