@@ -88,7 +88,7 @@ class GenAIProvider(LLMInterFace):
         if not response or not response.text:
             self.logger.error('Error while generating text with GenAI')
             return None
-
+        
         return response.text
     
     def generate_Chunks(self, prompt : str ,temperature :  float = 0.2) :

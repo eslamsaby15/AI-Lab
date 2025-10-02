@@ -31,14 +31,14 @@ class PodcastGenController(BaseController):
         self.prompt= None
 
 
-    def calculate_words(self, words_per_minute=200):
+    def calculate_words(self, words_per_minute=130):
         total_words = self.duration * words_per_minute
         intro_words = int(total_words * 0.2)  
         conclusion_words = int(total_words * 0.2)  
         main_words = total_words - intro_words - conclusion_words 
         return total_words, intro_words, main_words, conclusion_words
     
-    def GenerateScript(self, words_per_minute: int = 200):
+    def GenerateScript(self, words_per_minute: int = 130):
         total_words, intro_words, main_words, conclusion_words = self.calculate_words(words_per_minute)
 
         self.prompt = self.template.format(

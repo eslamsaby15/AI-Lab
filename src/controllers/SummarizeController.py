@@ -85,9 +85,9 @@ class Summarizer(BaseController):
                 language = self.lang , text = chunk
             )
 
-            summary = self.provider.generate_text(
+            summary = self.provider.generate_Chunks(
                 prompt= prompt , 
-                max_output_tokens= max_length ,
+                
                 temperature= .3
             )
             
