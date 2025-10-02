@@ -4,6 +4,7 @@ class LLMEnums(Enum):
     OPENAI = "OpenAI"
     COHERE = "Cohere"
     GEMINI ='Gemini'
+    All_MiniLM_L6_v2 = "sentence-transformers/all-MiniLM-L6-v2"
 
 class OpenEnums(Enum):
     SYSTEM= 'system' 

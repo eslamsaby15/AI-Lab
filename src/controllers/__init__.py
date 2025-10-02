@@ -5,3 +5,4 @@ from .DiarizationController import Diarization
 from .VideoScrpitController import VideoSriptGenController
 from .podcastGenController import PodcastGenController
 from .TranslationController import TransaltionController
+from .QaController import QAController

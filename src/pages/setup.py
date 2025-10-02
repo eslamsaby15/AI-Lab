@@ -61,8 +61,9 @@ def setup_page():
 
     st.session_state["embedding_provider"] = st.sidebar.selectbox(
         "Select Embedding Provider",
-        ["Cohere", "OpenAI", "Gemini"],
-        index=["Cohere", "OpenAI", "Gemini"].index(st.session_state["embedding_provider"])
+        ["Cohere", "OpenAI", "Gemini", "sentence-transformers/all-MiniLM-L6-v2"],
+        index=["Cohere", "OpenAI", "Gemini" , 
+               "sentence-transformers/all-MiniLM-L6-v2" ].index(st.session_state["embedding_provider"])
     )
 
     with st.sidebar:
