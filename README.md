@@ -151,23 +151,14 @@ $ cp .env.example .env
 ```bash
 $ streamlit run app.py
 ```
-
------------
-![AIVox Example](/src/images/example.jpg)
-
 ---------
 ## 🔹 Conclusion  
 
-- Demonstrates how **AIVox Lab** unifies multiple **speech & text AI tasks** into one app.  
+**AIVox Lab** 
 
-- Steps:  
+AIVox Lab unifies multiple speech and text AI tasks in a single app.  
+You can summarize long texts or transcripts, translate between languages, analyze sentiment, generate podcasts and video scripts, run interactive quizzes, and perform speaker diarization and topic tagging—all within a simple, user-friendly interface.
 
-  1. **Summarization** → summarize long texts or transcripts.  
-  2. **Translation** → translate text across multiple languages.  
-  3. **Sentiment Analysis** → detect emotions and polarity.  
-  4. **Podcast & Script Generation** → create podcasts and video scripts with AI.  
-  5. **Interactive Quizzes** → build engaging voice/text-based quizzes.  
-  6. **Speaker Diarization & Topic Tagging** → analyze audio and organize text with tags.  
 
 Built with **Streamlit** for an interactive and user-friendly interface.  
 
