@@ -41,7 +41,7 @@ class VideoSriptGenTask:
             duration= self.duration
         )
 
-    def run(self, words_per_minute : int = 200 ):
+    def run(self, words_per_minute : int = 140 ):
         return self.VideoGen.GenerateScript( words_per_minute )
 
     def Convert(self , script_text : str  , lang ='en') :

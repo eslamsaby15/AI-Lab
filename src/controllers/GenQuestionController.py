@@ -35,6 +35,8 @@ class MiniQuizController(BaseController):
             4. ANSWER must be A, B, or C
             5. Keep questions clear and concise
             6. All questions must be based on the provided text
+            7. generate questins about te user said.
+            8. choose main Questions.
             """
             )
 

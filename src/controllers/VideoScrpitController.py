@@ -121,7 +121,7 @@ class VideoSriptGenController(BaseController):
         return script_json
 
 
-    def calculate_words(self, words_per_minute : int =200):
+    def calculate_words(self, words_per_minute : int =130):
         total_words = self.duration * words_per_minute
         intro_words = int(total_words * 0.2)  
         conclusion_words = int(total_words * 0.2)  
@@ -130,7 +130,7 @@ class VideoSriptGenController(BaseController):
         return total_words, intro_words, main_words, conclusion_words
     
 
-    def GenerateScript(self, words_per_minute: int = 200):
+    def GenerateScript(self, words_per_minute: int = 130):
         total_words, intro_words, main_words, conclusion_words = self.calculate_words(words_per_minute)
 
         self.prompt = self.template.format(

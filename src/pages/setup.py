@@ -3,13 +3,12 @@ from ..helpers.config import APP_Setting
 
 
 def setup_page():
-    # Page Config
     st.set_page_config(
-        page_title="AI-Lab 📃",
+        page_title="AIVox Lab",
         layout="wide",
-        page_icon="🤖"
+        page_icon="🎙️"
     )
-    
+
     st.markdown(
         """
         <style>
@@ -20,7 +19,6 @@ def setup_page():
         unsafe_allow_html=True,
     )
 
-    # Defaults
     if "features" not in st.session_state:
         st.session_state["features"] = "🏡 Home"
 
@@ -30,20 +28,19 @@ def setup_page():
     if "embedding_provider" not in st.session_state:
         st.session_state["embedding_provider"] = "Cohere"
 
-    # Sidebar tasks
     sidebar_tasks = [
-    {"icon": "🏡", "name": "Home"},
-    {"icon": "📝", "name": "Summarize"},
-    {"icon": "🌍", "name": "Translation"},
-    {"icon": "📊", "name": "Sentiment Analysis"},
-    {"icon": "🎧", "name": "Podcast Generator"},
-    {"icon": "📽️", "name": "Video Script Generator"},
-    {"icon": "❓", "name": "Interactive Voice Quiz"},
-    {"icon": "🔊", "name": "Speaker Diarization"},
-    {"icon": "🏷️", "name": "Topic Tagging"},
-    {"icon": "🧩", "name": "Multi Quiz"} ]
+        {"icon": "🏡", "name": "Home"},
+        {"icon": "📝", "name": "Summarize"},
+        {"icon": "🌍", "name": "Translation"},
+        {"icon": "📊", "name": "Sentiment Analysis"},
+        {"icon": "🎧", "name": "Podcast Generator"},
+        {"icon": "📽️", "name": "Video Script Generator"},
+        {"icon": "❓", "name": "Interactive Voice Quiz"},
+        {"icon": "🔊", "name": "Speaker Diarization"},
+        {"icon": "🏷️", "name": "Topic Tagging"},
+        {"icon": "🧩", "name": "Multi Quiz"}
+    ]
 
-    # Sidebar navigation
     feature_names = [f"{f['icon']} {f['name']}" for f in sidebar_tasks]
     selected_feature = st.sidebar.selectbox(
         "Select Task", 
@@ -52,8 +49,7 @@ def setup_page():
     )
     st.session_state["features"] = selected_feature
 
-    # Sidebar provider selection
-    st.sidebar.markdown("### ⚙️ Providers Setup")
+    st.sidebar.markdown("## ⚙️ Providers Setup")
     st.session_state["generation_provider"] = st.sidebar.selectbox(
         "Select Generation Provider",
         ["OpenAI", "Gemini", "Cohere"],
@@ -63,8 +59,7 @@ def setup_page():
     st.session_state["embedding_provider"] = st.sidebar.selectbox(
         "Select Embedding Provider",
         ["Cohere", "OpenAI", "Gemini", "sentence-transformers/all-MiniLM-L6-v2"],
-        index=["Cohere", "OpenAI", "Gemini" , 
-               "sentence-transformers/all-MiniLM-L6-v2" ].index(st.session_state["embedding_provider"])
+        index=["Cohere", "OpenAI", "Gemini" , "sentence-transformers/all-MiniLM-L6-v2"].index(st.session_state["embedding_provider"])
     )
 
     with st.sidebar:
@@ -74,14 +69,11 @@ def setup_page():
         st.markdown("🔗 [LinkedIn](https://www.linkedin.com/in/eslamsabryai) 🔗 [Kaggle](https://www.kaggle.com/eslamsabryelsisi)")
         st.markdown("---")
 
-
-    # Main page content
     if st.session_state["features"] == "🏡 Home":
-        st.title("Welcome to AI-Lab Hub 🤖")
+        st.subheader("AIVox Lab 🎙️")
         st.image("src/assets/images/b1.png", use_container_width=True)
-        
-        # Feature buttons grid
-        st.markdown("Select  a Task :")
+        st.markdown("Select a Task :")
+
         cols = st.columns(3)
         for i, task in enumerate(sidebar_tasks):
             with cols[i % 3]:
