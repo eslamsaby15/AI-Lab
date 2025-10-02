@@ -1,6 +1,5 @@
 from .BaseController import BaseController
 import re
-from langchain.prompts import ChatPromptTemplate
 from .BaseController import BaseController
 from ..Stores.LLM import GenAIProvider
 from ..models.prompts import PodCastPromptEnum

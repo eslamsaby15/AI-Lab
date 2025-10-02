@@ -64,8 +64,8 @@ class GenAIProvider(LLMInterFace):
             return None
 
         return response.embedding
-
-    def generate_text(self, prompt, chat_history=None,
+    
+    def generate_text(self, prompt, 
                       max_output_tokens=None, temperature=None):
 
         if not self.gen_model_id:

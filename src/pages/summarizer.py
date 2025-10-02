@@ -6,6 +6,8 @@ from ..tasks import SummarizerTask
 import os
 
 def summarizer_page(): 
+    st.subheader("📝 Summarize")
+
     youtube_link = None 
     file_uploaded = None
 
