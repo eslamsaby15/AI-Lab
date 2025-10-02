@@ -32,15 +32,16 @@ def setup_page():
 
     # Sidebar tasks
     sidebar_tasks = [
-        {"icon": "🏡", "name": "Home"},
-        {"icon": "📝", "name": "Summarize"},
-        {"icon": "🌍", "name": "Translation"},
-        {"icon": "📊", "name": "Sentiment Analysis"},
-        {"icon": "🎧", "name": "Podcast Generator"},
-        {"icon": "📽️", "name": "Video Script Generator"},
-        {"icon": "❓", "name": "Q&A"},
-        {"icon": "🔊", "name": "Speaker Diarization"},
-    ]
+    {"icon": "🏡", "name": "Home"},
+    {"icon": "📝", "name": "Summarize"},
+    {"icon": "🌍", "name": "Translation"},
+    {"icon": "📊", "name": "Sentiment Analysis"},
+    {"icon": "🎧", "name": "Podcast Generator"},
+    {"icon": "📽️", "name": "Video Script Generator"},
+    {"icon": "❓", "name": "Interactive Voice Quiz"},
+    {"icon": "🔊", "name": "Speaker Diarization"},
+    {"icon": "🏷️", "name": "Topic Tagging"},
+    {"icon": "🧩", "name": "Multi Quiz"} ]
 
     # Sidebar navigation
     feature_names = [f"{f['icon']} {f['name']}" for f in sidebar_tasks]

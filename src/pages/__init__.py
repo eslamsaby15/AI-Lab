@@ -5,3 +5,6 @@ from .VideoSriptGen import VideoScriptGenerationPage
 from .PodcastGenPage import PodcastSriptPage
 from .TranslationPage import Translation_page
 from .QApage import QA_Page
+from .SetmentAnalysis import SentimentAnalysis_page
+from .topic_page import TopicTagging_page
+from .miniQuiz_page import MiniQuiz_page
