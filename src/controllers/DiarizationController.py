@@ -29,10 +29,6 @@ class Diarization(BaseController):
             ("user", "{text}")
         ])
 
-        self.prompt_template = ChatPromptTemplate.from_messages([
-            ("system", system_text),
-            ("user", "{text}")
-        ])
 
     def run_diarization(self, transcript: str) -> DiarizationResult:
         chunks = self.splitter.split_text(transcript)
